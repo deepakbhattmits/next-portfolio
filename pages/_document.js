@@ -23,30 +23,6 @@ class MyDocument extends Document {
 					<Main />
 					<NextScript />
 				</body>
-				<style global jsx>{`
-					body {
-						font-family: 'Roboto', sans-serif;
-					}
-					header {
-						width: 100%;
-						display: flex;
-						justify-content: space-around;
-						padding: 1em;
-						font-size: 1.2rem;
-						background: indigo;
-					}
-					header a {
-						color: darkgrey;
-						text-decoration: none;
-					}
-					header a:hover {
-						font-weight: bold;
-						color: lightgrey;
-					}
-					footer {
-						padding: 1em;
-					}
-				`}</style>
 			</html>
 		);
 	}

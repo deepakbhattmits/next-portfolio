@@ -6,11 +6,21 @@ import { blogs } from '../constants';
 const Blog = () => {
 	return (
 		<Layout title='Blog'>
-			<ul>
+			<section className='blog-section'>
 				{blogs?.map((el, index) => (
 					<PostLink slug={`${el}-Post`} title={el} key={index} />
 				))}
-			</ul>
+			</section>
+			<style jsx>{`
+				.blog-section {
+					width: 100%;
+					display: grid;
+					grid-gap: 10px;
+					grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+					align-items: center;
+					justify-items: center;
+				}
+			`}</style>
 		</Layout>
 	);
 };
