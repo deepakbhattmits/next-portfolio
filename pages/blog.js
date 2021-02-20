@@ -1,13 +1,13 @@
 /** @format */
 import Layout from '../components/Layout';
 import PostLink from '../components/PostLink';
-import { blogs } from '../constants';
+import { skills } from '../constants';
 
 const Blog = () => {
 	return (
 		<Layout title='Blog'>
 			<section className='blog-section'>
-				{blogs?.map((el, index) => (
+				{skills?.map((el, index) => (
 					<PostLink slug={`${el}-Post`} title={el} key={index} />
 				))}
 			</section>
@@ -19,6 +19,7 @@ const Blog = () => {
 					grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
 					align-items: center;
 					justify-items: center;
+					margin-top: 10px;
 				}
 			`}</style>
 		</Layout>
