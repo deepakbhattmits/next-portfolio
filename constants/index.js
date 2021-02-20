@@ -1,4 +1,6 @@
 /** @format */
 
 export * from './url';
-export * from './blogs';
+export * from './skills';
+export * from './socials';
+export * from './repos';
