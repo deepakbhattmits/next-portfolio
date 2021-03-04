@@ -1,16 +1,8 @@
 /** @format */
 
-// export const skills = [
-// 	'react',
-// 	'react-native',
-// 	'node',
-// 	'deno',
-// 	'graphQl',
-// 	'MongoDB',
-// 	"css preprocessor's",
-// ];
 export const skills = [
-	{ name: 'react', logo: 'react' },
+	{ name: 'react js', logo: 'react' },
+	{ name: 'next js', logo: 'next' },
 	{ name: 'react-native', logo: 'react' },
 	{ name: 'javascript', logo: 'javascript' },
 	{ name: 'node', logo: 'nodejs' },
