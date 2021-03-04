@@ -35,11 +35,24 @@ const Index = ({ user = {}, statusCode }) => {
 					margin: 0.5em;
 				}
 				.main {
-					display: grid;
-					grid-template-columns: 95% 1fr;
 					overflow-y: auto;
 					overflow-x: hidden;
-					padding-left: 0.2em;
+					padding: 0;
+				}
+				/* Track */
+				.main::-webkit-scrollbar-track {
+					background: #ccc;
+				}
+
+				/* Handle */
+				.main::-webkit-scrollbar-thumb {
+					background: #555;
+					border-radius: 0;
+				}
+
+				/* Handle on hover */
+				.main::-webkit-scrollbar-thumb:hover {
+					background: #555;
 				}
 			`}</style>
 		</div>
