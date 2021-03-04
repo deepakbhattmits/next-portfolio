@@ -1,5 +1,4 @@
 /** @format */
-
 const Skills = ({ skills }) => {
 	return (
 		<div className='skills'>
@@ -10,6 +9,8 @@ const Skills = ({ skills }) => {
 							className='ui avatar image'
 							src={`./images/${logo}-logo.svg`}
 							alt={name}
+							width='15'
+							height='15'
 						/>
 						<div className='content'>
 							<a className='header'>{name}</a>
