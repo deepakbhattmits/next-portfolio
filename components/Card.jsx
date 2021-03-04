@@ -1,7 +1,7 @@
 /** @format */
 
 import Link from 'next/link';
-import Error from '../pages/_error';
+// import { firstCharCaps } from '../utils';
 
 const Card = ({ repos }) => {
 	return (
@@ -13,7 +13,14 @@ const Card = ({ repos }) => {
 							<div className='header'>
 								{appName} <i className='rocket green icon'></i>
 							</div>
-							<div className='meta'>{stacks.join(',')}</div>
+							<div className='meta'>
+								<strong className='header'>Stacks : </strong>
+								{stacks
+									.map(
+										(e) => e.split('')[0].toUpperCase() + e.slice(1, e.length)
+									)
+									.join(', ')}
+							</div>
 							<div className='description'>{description}</div>
 						</div>
 						<div className='action extra'>
@@ -38,7 +45,6 @@ const Card = ({ repos }) => {
 				))}
 			</div>
 			<style jsx>{`
-				/** @format */
 				.ui.cards {
 					margin: 0;
 				}
@@ -59,7 +65,8 @@ const Card = ({ repos }) => {
 					color: var(--color-btn-background);
 					border: 2px solidvar(--color-btn-background);
 				}
-				.ui.cards > .card > .content > .header {
+				.ui.cards > .card > .content > .header,
+				.ui.cards > .card > .content > .meta > .header {
 					color: var(--color-primary);
 				}
 				.ui.cards > .card > .content > .description {
