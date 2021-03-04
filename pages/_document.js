@@ -10,6 +10,8 @@ class MyDocument extends Document {
 					<meta name='description' content='a site for my programming' />
 					<meta charSet='utf-8' />
 					<meta name='robots' content='noindex, nofollow' />
+
+					<link rel='icon' type='image/png' href='/images/favicon.png' />
 					<link
 						rel='stylesheet'
 						href='https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css'
