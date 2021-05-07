@@ -34,11 +34,18 @@ const DarkModeToggle = () => {
 			{darkTheme !== undefined && (
 				<label className='switch'>
 					<input type='checkbox' checked={darkTheme} onChange={handleToggle} />
-					<span className='slider round'>
+					<span className={`slider round ${darkTheme ? 'night' : 'day'}`}>
+						{/* {darkTheme?<p>DAYMODE <i className='ui icon orange sun large outline' /></p>:<p><i className='ui icon moon large outline' />NIGHTMODE</p>} */}
 						{darkTheme ? (
-							<i className='ui icon orange sun large outline' />
+							<>
+								<i className='ui icon sun large outline' />
+								<p>DAYMODE</p>
+							</>
 						) : (
-							<i className='ui icon moon large outline' />
+							<>
+								<i className='ui icon moon large outline' />
+								<p>NIGHTMODE</p>
+							</>
 						)}
 					</span>
 				</label>
@@ -46,11 +53,12 @@ const DarkModeToggle = () => {
 			<style jsx>{`
 				.switch {
 					right: 1.2em;
-					width: 60px;
+					width: 90px;
 					height: 30px;
 					margin: 0.5em 0;
 					position: fixed;
 					top: 0.2em;
+					z-index:1;
 				}
 				.switch input {
 					opacity: 0;
@@ -69,10 +77,10 @@ const DarkModeToggle = () => {
 					display: flex;
 					align-items: center;
 				}
-				.slider .moon {
-					position: absolute;
-					right: 0;
-				}
+				// .slider .moon {
+				// 	position: absolute;
+				// 	right: 0;
+				// }
 				.slider:before {
 					position: absolute;
 					content: '';
@@ -90,18 +98,43 @@ const DarkModeToggle = () => {
 				}
 
 				input:checked + .slider:before {
-					-webkit-transform: translateX(26px);
-					-ms-transform: translateX(26px);
-					transform: translateX(26px);
+					-webkit-transform: translateX(58px);
+					-ms-transform: translateX(58px);
+					transform: translateX(58px);
 				}
 				/* Rounded sliders */
 				.slider.round {
 					border-radius: 34px;
+					
 				}
 
 				.slider.round:before {
 					border-radius: 50%;
+					-webkit-transform: translateX(-2px);
+					-ms-transform: translateX(-2px);
+					transform: translateX(-2px);
 				}
+				.night i {
+					position: absolute;
+					right: 2px;
+					color:#000;
+					margin:0;
+				}
+				.night p {
+					font-weight: bolder;
+					font-size: 8px;
+					text-indent: 14px;
+					color: #000;
+				}
+				.day i {
+					position: absolute;
+					left: 2px;
+				}
+				.day p {
+					font-weight: bolder;
+					font-size: 8px;
+					text-indent: 32px;
+				
 			`}</style>
 		</>
 	);
