@@ -65,6 +65,9 @@ const ImageContainer = ({ user: { avatar_url, name, location } }) => {
 				.description .ui.list .item {
 					margin: 5px 0;
 				}
+				.ui.list > .item a {
+					word-break: break-word;
+				}
 			`}</style>
 		</>
 	);
