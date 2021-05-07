@@ -38,12 +38,12 @@ const DarkModeToggle = () => {
 						{/* {darkTheme?<p>DAYMODE <i className='ui icon orange sun large outline' /></p>:<p><i className='ui icon moon large outline' />NIGHTMODE</p>} */}
 						{darkTheme ? (
 							<>
-								<i className='ui icon sun large outline' />
+								<i className='ui icon sun outline' />
 								<p>DAYMODE</p>
 							</>
 						) : (
 							<>
-								<i className='ui icon moon large outline' />
+								<i className='ui icon moon outline' />
 								<p>NIGHTMODE</p>
 							</>
 						)}
@@ -52,7 +52,7 @@ const DarkModeToggle = () => {
 			)}
 			<style jsx>{`
 				.switch {
-					right: 1.2em;
+					right: 1.6em;
 					width: 90px;
 					height: 30px;
 					margin: 0.5em 0;
@@ -116,7 +116,8 @@ const DarkModeToggle = () => {
 				}
 				.night i {
 					position: absolute;
-					right: 2px;
+					right: 6px;
+					top:6px;
 					color:#000;
 					margin:0;
 				}
@@ -128,7 +129,8 @@ const DarkModeToggle = () => {
 				}
 				.day i {
 					position: absolute;
-					left: 2px;
+					left: 7px;
+					top: 6px;
 				}
 				.day p {
 					font-weight: bolder;
