@@ -54,14 +54,14 @@ const Card = ({ repos }) => {
 				}
 				.ui.cards > .card > .extra.action .ui.button {
 					background: var(--color-btn-background);
-					color: var(--color-background);
+					color: #fff;
 					border: 2px solid var(--color-btn-background);
 					width: 80px;
 					border-radius: 50px;
 					padding: 0.5em;
 				}
 				.ui.cards > .card > .extra.action .ui.button:hover {
-					background: var(--color-background);
+					background: #fff;
 					color: var(--color-btn-background);
 					border: 2px solidvar(--color-btn-background);
 				}
