@@ -1,0 +1,112 @@
+/** @format */
+
+const list = [
+	{ name: 'deepak', empId: 'C1', salary: 2000 },
+	{ name: 'ram', empId: 'C2', salary: 5000 },
+	{ name: 'shyam', empId: 'C3', salary: 4000 },
+	{ name: 'xyz', empId: 'C5', salary: 8000 },
+	{ name: 'abc', empId: 'C6', salary: 10000 },
+];
+const fullSalary = list.reduce(({ salary }, list) => {
+	let fullSal = 0;
+	fullSal = fullSal + salary;
+	const avg = fullSal / list.length;
+	return avg;
+});
+
+/*=============currying===========*/
+console.log(filteredList);
+
+const sum = (a) => {
+	return (b) => b + a;
+};
+
+sum(1)(2);
+
+/*============== call=============*/
+const P = {
+	fistName: 'A',
+	lastName: 'B',
+};
+const person = {
+	fistName: '',
+	lastName: '',
+	fullName: function () {
+		return this.firstName + ' ' + this.lastName;
+	},
+};
+
+const xyz = (arg) => {
+	return person.fullName.call(arg);
+};
+const R = xyz(P);
+console.log(R);
+
+/*---------------------unique---------------------*/
+let arr = [3, 2, 7, 5, 9, 8, 2, 9, 8, 3, 4];
+
+const getUnique = (arg) => {
+	const res = arg.filter((el, i, self) => {
+		return self.indexOf(el) === i;
+	});
+	return res;
+};
+
+getUnique(arr);
+
+/*=========bubbling======*/
+document.getElementById('one').addEventListener('click', show, false);
+
+/*=========capture======*/
+document.getElementById('one').addEventListener('click', show, true);
+
+/*=================prototype======================*/
+
+var Model = function (model_no) {
+	// Instance Member
+	this.model = model_no;
+	this.price = 3000;
+};
+
+var samsung = new Model('samsung');
+var nokia = new Model('nokia');
+//Prototype member
+Model.prototype.color = 'white';
+console.log(samsung);
+console.log(nokia);
+
+/*===================================*/
+function generate(num) {
+	return [...Array(num)].map((_) => this).join('');
+}
+String.prototype.generate = generate;
+
+'hello'.generate(3);
+
+// method ‘generate’ doesn’t exist,
+// please implement it so that code at the bottom works
+const result = 'hello'.generate(3);
+console.log(result); // Should print ‘hellohellohello’ on the single line
+
+/*===================call, apply, bind====================*/
+var name1 = {
+	firstName: 'deepak',
+	lastName: 'bhatt',
+};
+var name2 = {
+	firstName: 'pooja',
+	lastName: 'upadhyay',
+};
+var printFullName = function (location, district) {
+	console.log(this.firstName, this.lastName, location, district);
+};
+
+printFullName.call(name1, 'Uttrakhand', 'pithoragarh');
+printFullName.call(name2, 'Uttrakhand', 'pithoragarh');
+
+//apply
+printFullName.apply(name2, ['Uttrakhand', 'pithoragarh']);
+
+//bind
+var printMyName = printFullName.bind(name1, 'Uttrakhand', 'pithoragarh');
+console.log(printMyName);
