@@ -11,3 +11,4 @@ const useLogin = () => {
 
 	return { loginService };
 };
+export default useLogin;
